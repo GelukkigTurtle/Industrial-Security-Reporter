@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-background-color 0xdfdfdfff?>
+
+<AnchorPane id="AnchorPane" maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml" fx:controller="tascmanager.controller.ManagerController">
+  <children>
+    <Pane prefHeight="62.0" prefWidth="772.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="11.0">
+      <children>
+        <AnchorPane id="AnchorPane" layoutY="5.0">
+          <children>
+            <MenuBar prefHeight="26.0" prefWidth="758.0000999999975" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Menu                    |">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Nuevo Caso         -" fx:id="iniciarDenuevo" />
+                    <MenuItem mnemonicParsing="false" text="Cerrar                   -" fx:id="opCerrar" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Ayuda            |">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Acerca De      -" fx:id="opAcercaDe" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+          </children>
+        </AnchorPane>
+        <Label id="mensajeAlerta" fx:id="lblMensajeAlerta" layoutX="14.0" layoutY="39.0" prefWidth="496.0" textFill="#990000">
+          <font>
+            <Font name="Verdana" size="14.0" />
+          </font>
+        </Label>
+        <Label layoutX="578.0" layoutY="33.0" text="TASC Reports">
+          <font>
+            <Font size="30.0" />
+          </font>
+        </Label>
+      </children>
+    </Pane>
+    <Pane prefHeight="34.921875" prefWidth="772.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+      <children>
+        <AnchorPane id="AnchorPane" layoutX="661.0" layoutY="3.0" prefHeight="29.4677734375" />
+        <Button fx:id="btnSiguiente" layoutX="661.0" layoutY="3.0" mnemonicParsing="false" onAction="#accionSiguiente" prefHeight="28.4677734375" prefWidth="97.0" text="Siguiente" />
+        <Label contentDisplay="TOP" layoutY="13.0" prefWidth="525.0" text="TurtleSoftware SA                                      ®2013 Todos los derechos reservados">
+          <font>
+            <Font name="Verdana" size="12.0" />
+          </font>
+        </Label>
+      </children>
+    </Pane>
+    <TabPane fx:id="tabPaneWizard" layoutY="102.0" prefHeight="436.0" prefWidth="758.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="14.0">
+      <tabs>
+        <Tab fx:id="tab1" onSelectionChanged="#cambioATab2" text="Tipo de Contacto">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="435.0" prefWidth="737.0">
+              <children>
+                <ChoiceBox fx:id="cmbTipoContacto" onDragDone="#tipoContactoSelecciondo" prefHeight="29.0" prefWidth="403.0" AnchorPane.leftAnchor="178.0" AnchorPane.topAnchor="106.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <Label text="Seleccionar tipo de contacto" AnchorPane.leftAnchor="178.0" AnchorPane.topAnchor="62.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="tab2" onSelectionChanged="#cambioATab3" text="Causas Inmediatas">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView fx:id="tbVwCausasInmediatas" prefHeight="380.0" prefWidth="716.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="14.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="tab3" onSelectionChanged="#cambioATab5" text="Desglose de Causas Basicas">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView fx:id="tbVwCausasBasicas" prefHeight="380.0" prefWidth="716.0" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="19.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="tab4" onSelectionChanged="#cambioATab4" text="Sub Causas Basicas">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView fx:id="tbVwSubCausasBasicas" prefHeight="380.0" prefWidth="716.0" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="14.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="tab5" onSelectionChanged="#cambioATab4" text="Acciones de Mejora">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <TableView fx:id="tbVwMejoras" prefHeight="380.0" prefWidth="709.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab id="" fx:id="tab6" text="Reporte">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="413.0" prefWidth="758.0">
+              <children>
+                <Button fx:id="btnReporte" mnemonicParsing="false" onAction="#generarReporte" prefHeight="35.0" prefWidth="190.0" text="Generar Reporte" AnchorPane.leftAnchor="284.0" AnchorPane.topAnchor="189.0" />
+                <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="292.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../recursos/reporte-icon.png" preserveRatio="false" smooth="false" />
+                  </image>
+                </ImageView>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+    <Label layoutX="552.0" layoutY="81.0" text="Técnica de Análisis Sistemático de Causas" />
+  </children>
+</AnchorPane>

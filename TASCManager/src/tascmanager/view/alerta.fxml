@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-background-color 0xfffb99ff?>
+
+<AnchorPane id="AnchorPane" fx:id="panelPrincipal" prefHeight="151.0" prefWidth="430.0" xmlns:fx="http://javafx.com/fxml" fx:controller="tascmanager.controller.AlertaController">
+  <children>
+    <AnchorPane fx:id="panelinterior" layoutX="8.0" layoutY="6.0" prefHeight="140.0" prefWidth="415.0">
+      <children>
+        <Label layoutX="25.0" layoutY="43.0" prefHeight="55.0" text="ATENCION: Debe seleccionar por lo menos una opcion!" textFill="#990000">
+          <font>
+            <Font name="Verdana" size="13.0" />
+          </font>
+        </Label>
+        <Button fx:id="btnOK" layoutX="154.0" layoutY="90.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="105.0" text="OK" />
+        <ImageView fx:id="imagen" fitHeight="41.0" fitWidth="41.0" layoutX="187.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../recursos/alerta2.png" preserveRatio="false" smooth="false" />
+          </image>
+        </ImageView>
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="TASCManager.jnlp">
+  <information>
+    <title>TASCManager</title>
+    <vendor>Freddy</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="TASCManager.jar" size="81144" download="eager" />
+    <jar href="lib\commons-io.jar" size="83613" download="eager" />
+    <jar href="lib\commons-logging-1.1.jar" size="52592" download="eager" />
+    <jar href="lib\commons-logging.jar" size="60841" download="eager" />
+    <jar href="lib\dom4j-1.6.1.jar" size="313898" download="eager" />
+    <jar href="lib\itext-2.1.7.jar" size="1130070" download="eager" />
+    <jar href="lib\itext.jar" size="1130070" download="eager" />
+    <jar href="lib\ldap.jar" size="439100" download="eager" />
+    <jar href="lib\log4j-1.2.16.jar" size="481535" download="eager" />
+    <jar href="lib\ooxml-schemas-1.1.jar" size="14841622" download="eager" />
+    <jar href="lib\poi-3.7-beta3.jar" size="1659687" download="eager" />
+    <jar href="lib\poi-ooxml-3.6.jar" size="412783" download="eager" />
+    <jar href="lib\poi-ooxml-3.7.jar" size="498259" download="eager" />
+    <jar href="lib\poi-ooxml-schemas-3.7.jar" size="3967696" download="eager" />
+    <jar href="lib\poi.jar" size="1675036" download="eager" />
+    <jar href="lib\xmlbeans-2.5.0.jar" size="2722970" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="TASCManager" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="tascmanager.composer.TASCManager"  name="TASCManager" />
+  <update check="always"/>
+</jnlp>
